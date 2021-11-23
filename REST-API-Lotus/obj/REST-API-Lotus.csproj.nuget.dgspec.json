@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\REST-API-Lotus.csproj": {}
+    "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\REST-API-Lotus.csproj": {}
   },
   "projects": {
-    "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\REST-API-Lotus.csproj": {
+    "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\REST-API-Lotus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\REST-API-Lotus.csproj",
+        "projectUniqueName": "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\REST-API-Lotus.csproj",
         "projectName": "REST-API-Lotus",
-        "projectPath": "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\REST-API-Lotus.csproj",
+        "projectPath": "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\REST-API-Lotus.csproj",
         "packagesPath": "C:\\Users\\FLP_V\\.nuget\\packages\\",
-        "outputPath": "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\obj\\",
+        "outputPath": "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

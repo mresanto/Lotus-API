@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s9x4mlwBg2HPdyQ4/jUdKPp6LjsWJXJjr0hS8O0lpnDV1yG5ZbF16tlTIKxi6D2wJ3IE+S+9UVGM23Cney6dSA==",
+  "dgSpecHash": "Hc/i3hI1DCdKu+aGbXyo/4ogXUG0dFcSgZuxGr2DpSSMvzC7iKo2wiabyOdu2p1OPzPXuZtYP3poklPWL/9SmA==",
   "success": true,
-  "projectFilePath": "D:\\Micael\\PAM\\REST-API-Lotus\\REST-API-Lotus\\REST-API-Lotus.csproj",
+  "projectFilePath": "D:\\Micael\\PAM\\REST-API-Lotus\\Lotus-API\\REST-API-Lotus\\REST-API-Lotus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FLP_V\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\FLP_V\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
