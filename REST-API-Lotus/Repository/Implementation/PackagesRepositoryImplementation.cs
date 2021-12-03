@@ -7,18 +7,19 @@ using System.Text;
 
 namespace REST_API_Lotus.Repository
 {
-    public class ProductRepositoryImplementation : IProductRepository
+    public class PackagesRepositoryImplementation : IPackagesRepository
     {
         private readonly IConfiguration _configuration;
         internal DBConnection db { get; set; }
 
-        public ProductRepositoryImplementation(IConfiguration configuration)
+        public PackagesRepositoryImplementation(IConfiguration configuration)
         {
             _configuration = configuration;
         }
         public string FindAll()
         {
-            string query = @"Select * from SelectProduct;";
+            string vview = "SelectPackage";
+            string query = @"Select * from "+ vview +";";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
@@ -41,17 +42,43 @@ namespace REST_API_Lotus.Repository
             return DataTableToJsonObj(table);
         }
 
-        public string FindByCategory(string category)
+        //public string FindByCategory(string category)
+        //{
+        //    string query;
+        //    query = @"Select * from SelectProduct;";
+        //    if (category != "Todos")
+        //    query = @"Select * from SelectProduct where CatName ='" + category + "';";
+        //
+        //    DataTable table = new DataTable();
+        //    string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
+        //    MySqlDataReader myReader;
+        //
+        //    using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
+        //    {
+        //        mycon.Open();
+        //        using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
+        //        {
+        //            myReader = myCommand.ExecuteReader();
+        //            table.Load(myReader);
+        //
+        //            myReader.Close();
+        //            mycon.Close();
+        //        }
+        //    };
+        //
+        //
+        //    return DataTableToJsonObj(table);
+        //}
+        //
+        public string FindByCode(int packcode)
         {
-            string query;
-            query = @"Select * from SelectProduct;";
-            if (category != "Todos")
-            query = @"Select * from SelectProduct where CatName ='" + category + "';";
-
+            string vview = "SelectPackage";
+            string query = @"Select * from " + vview + " where PackCode = " + packcode + ";";
+        
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
             MySqlDataReader myReader;
-
+        
             using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
             {
                 mycon.Open();
@@ -59,38 +86,13 @@ namespace REST_API_Lotus.Repository
                 {
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
-
+        
                     myReader.Close();
                     mycon.Close();
                 }
             };
-
-
-            return DataTableToJsonObj(table);
-        }
-
-        public string FindByCode(int procode)
-        {
-             string query = @"Select * from SelectProduct where ProdBarCode =" + procode + ";";
-
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
-            MySqlDataReader myReader;
-
-            using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
-            {
-                mycon.Open();
-                using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
-                {
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-
-                    myReader.Close();
-                    mycon.Close();
-                }
-            };
-
-
+        
+        
             return DataTableToJsonObj(table);
         }
 

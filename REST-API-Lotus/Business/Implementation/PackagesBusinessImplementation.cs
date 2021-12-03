@@ -13,10 +13,10 @@ using System.Text;
 
 namespace REST_API_Lotus.Business.Implementation
 {
-    public class ProductBusinessImplementation : IProductBusiness
+    public class PackageBusinessImplementation : IPackagesBusiness
     {
-        private readonly IProductRepository _repository;
-        public ProductBusinessImplementation(IProductRepository repository)
+        private readonly IPackagesRepository _repository;
+        public PackageBusinessImplementation(IPackagesRepository repository)
         {
             _repository = repository;
         }
@@ -24,13 +24,13 @@ namespace REST_API_Lotus.Business.Implementation
         {
             return _repository.FindAll();
         }
-        public string FindByCategory(string category)
+        //public string FindByCategory(string category)
+        //{
+        //    return _repository.FindByCategory(category);
+        //}
+        public string FindByCode(int packcode)
         {
-            return _repository.FindByCategory(category);
-        }
-        public string FindByCode(int prodcode)
-        {
-            return _repository.FindByCode(prodcode);
+            return _repository.FindByCode(packcode);
         }
     }
 }

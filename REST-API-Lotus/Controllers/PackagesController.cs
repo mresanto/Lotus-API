@@ -16,16 +16,16 @@ namespace REST_API_Lotus.Controllers
     [ApiVersion("1")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class ProductController : ControllerBase
+    public class PackageController : ControllerBase
     {
 
-        private readonly ILogger<ProductController> _logger;
-        private IProductBusiness _productBusiness;
+        private readonly ILogger<PackageController> _logger;
+        private IPackagesBusiness _packagesBusiness;
 
-        public ProductController(ILogger<ProductController> logger, IProductBusiness productBusiness)
+        public PackageController(ILogger<PackageController> logger, IPackagesBusiness packagesBusiness)
         {
             _logger = logger;
-            _productBusiness = productBusiness;
+            _packagesBusiness = packagesBusiness;
         }
         [HttpGet]
         [ProducesResponseType((200), Type = typeof(Customer))]
@@ -34,27 +34,27 @@ namespace REST_API_Lotus.Controllers
         [ProducesResponseType(401)]
         public IActionResult Get()
         {
-            return Ok(_productBusiness.FindAll());
+            return Ok(_packagesBusiness.FindAll());
         }
 
-        [HttpGet("category/{category}")]
+        //[HttpGet("category/{category}")]
+        //[ProducesResponseType((200), Type = typeof(Customer))]
+        //[ProducesResponseType(204)]
+        //[ProducesResponseType(400)]
+        //[ProducesResponseType(401)]
+        //public IActionResult Get(string category)
+        //{
+        //    return Ok(_productBusiness.FindByCategory(category));
+        //}
+        //
+        [HttpGet("{packcode}")]
         [ProducesResponseType((200), Type = typeof(Customer))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
-        public IActionResult Get(string category)
+        public IActionResult Get(int packcode)
         {
-            return Ok(_productBusiness.FindByCategory(category));
-        }
-
-        [HttpGet("{prodcode}")]
-        [ProducesResponseType((200), Type = typeof(Customer))]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(401)]
-        public IActionResult Get(int prodcode)
-        {
-            return Ok(_productBusiness.FindByCode(prodcode));
+            return Ok(_packagesBusiness.FindByCode(packcode));
         }
     }
 }

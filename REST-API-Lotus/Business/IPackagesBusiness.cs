@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace REST_API_Lotus.Repository
+namespace REST_API_Lotus.Business
 {
-    public interface IProductRepository
+    public interface IPackagesBusiness
     {
         string FindAll();
-        string FindByCategory(string category);
-        string FindByCode(int prodcode);
-    }
+        //string FindByCategory(string category);
+        string FindByCode(int packcode);
+    }   
 }

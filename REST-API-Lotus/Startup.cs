@@ -72,6 +72,9 @@ namespace REST_API_Lotus
             services.AddScoped<IProductBusiness, ProductBusinessImplementation>();
             services.AddScoped<IProductRepository, ProductRepositoryImplementation>();
 
+            services.AddScoped<IPackagesBusiness, PackageBusinessImplementation>();
+            services.AddScoped<IPackagesRepository, PackagesRepositoryImplementation>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

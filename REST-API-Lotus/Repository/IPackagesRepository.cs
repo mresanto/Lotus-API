@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace REST_API_Lotus.Repository
 {
-    public interface IProductRepository
+    public interface IPackagesRepository
     {
         string FindAll();
-        string FindByCategory(string category);
-        string FindByCode(int prodcode);
-    }
+        //string FindByCategory(string category);
+        string FindByCode(int packcode);
+    }   
 }

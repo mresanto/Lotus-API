@@ -10,7 +10,7 @@ namespace REST_API_Lotus.Business
     public interface IProductBusiness
     {
         string FindAll();
-        string FindByCode(string category);
-
+        string FindByCategory(string category);
+        string FindByCode(int prodcode);
     }
 }
