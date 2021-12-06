@@ -86,3 +86,11 @@ D:\Micael\PAM\REST-API-Lotus\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\RE
 D:\Micael\PAM\REST-API-Lotus\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.dll
 D:\Micael\PAM\REST-API-Lotus\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.pdb
 D:\Micael\PAM\REST-API-Lotus\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.genruntimeconfig.cache
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.csproj.AssemblyReference.cache
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.GeneratedMSBuildEditorConfig.editorconfig
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.AssemblyInfoInputs.cache
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.AssemblyInfo.cs
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.csproj.CoreCompileInputs.cache
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.MvcApplicationPartsAssemblyInfo.cache
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.dll
+T:\Usuarios\INFORMATICA\3A ETIM\Micael\Lotus-API\REST-API-Lotus\obj\Debug\netcoreapp3.1\REST-API-Lotus.pdb

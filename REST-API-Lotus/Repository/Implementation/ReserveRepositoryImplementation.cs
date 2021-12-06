@@ -7,19 +7,19 @@ using System.Text;
 
 namespace REST_API_Lotus.Repository
 {
-    public class OrderRepositoryImplementation : IOrderRepository
+    public class ReserveRepositoryImplementation : IReserveRepository
     {
         private readonly IConfiguration _configuration;
         internal DBConnection db { get; set; }
 
-        public OrderRepositoryImplementation(IConfiguration configuration)
+        public ReserveRepositoryImplementation(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-        public JsonResult Create(Order order)
+        public JsonResult Create(Reserve reserve)
         {
-            string query = "spInsertOrder";
-
+            string query = "spInsertReserve";
+            
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
             MySqlDataReader myReader;
@@ -29,11 +29,15 @@ namespace REST_API_Lotus.Repository
                 using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
                 {
                     Cmd.CommandType = CommandType.StoredProcedure;
-                    Cmd.Parameters.AddWithValue("varOrdCode ", order.ordcode);
-                    Cmd.Parameters.AddWithValue("varProdBarCode ", order.prodbarcode);
-                    Cmd.Parameters.AddWithValue("varItemUnitaryPrice ", order.itemunitaryprice);
-                    Cmd.Parameters.AddWithValue("varItemAmount ", order.ItemAmount);
-                    Cmd.Parameters.AddWithValue("varItemTotalPrice  ", order.ItemTotalPrice);
+                    Cmd.Parameters.AddWithValue("varResCode", reserve.rescode);
+                    Cmd.Parameters.AddWithValue("varResValidity", reserve.resvalidity);
+                    Cmd.Parameters.AddWithValue("varResAmount", reserve.resamount);
+                    Cmd.Parameters.AddWithValue("varStatusReserve", reserve.statusreserve);
+                    Cmd.Parameters.AddWithValue("varIsDeleted", reserve.isdeleted);
+                    Cmd.Parameters.AddWithValue("vartCustCPF", reserve.custcpf);
+                    Cmd.Parameters.AddWithValue("varPackCode", reserve.packcode);
+                    Cmd.Parameters.AddWithValue("varPayCode", reserve.paycode);
+
 
                     myReader = Cmd.ExecuteReader();
                     table.Load(myReader);
@@ -46,11 +50,6 @@ namespace REST_API_Lotus.Repository
             }
 
             return new JsonResult("Added Successfully");
-        }
-
-        public void Delete(long id)
-        {
-
         }
 
         public string FindAll()
@@ -77,9 +76,10 @@ namespace REST_API_Lotus.Repository
 
             return DataTableToJsonObj(table);
         }
-        public JsonResult Update(Order order)
+        public JsonResult Update(Reserve reser
+            )
         {
-            string query = "spUpdateOrder";
+            string query = "spUpdateReserve";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
@@ -90,11 +90,14 @@ namespace REST_API_Lotus.Repository
                 using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
                 {
                     Cmd.CommandType = CommandType.StoredProcedure;
-                    Cmd.Parameters.AddWithValue("varOrdCode ", order.ordcode);
-                    Cmd.Parameters.AddWithValue("varProdBarCode ", order.prodbarcode);
-                    Cmd.Parameters.AddWithValue("varItemUnitaryPrice ", order.itemunitaryprice);
-                    Cmd.Parameters.AddWithValue("varItemAmount ", order.ItemAmount);
-                    Cmd.Parameters.AddWithValue("varItemTotalPrice  ", order.ItemTotalPrice);
+                    Cmd.Parameters.AddWithValue("varResCode", reserve.rescode);
+                    Cmd.Parameters.AddWithValue("varResValidity", reserve.resvalidity);
+                    Cmd.Parameters.AddWithValue("varResAmount", reserve.resamount);
+                    Cmd.Parameters.AddWithValue("varStatusReserve", reserve.statusreserve);
+                    Cmd.Parameters.AddWithValue("varIsDeleted", reserve.isdeleted);
+                    Cmd.Parameters.AddWithValue("vartCustCPF", reserve.custcpf);
+                    Cmd.Parameters.AddWithValue("varPackCode", reserve.packcode);
+                    Cmd.Parameters.AddWithValue("varPayCode", reserve.paycode);
 
                     myReader = Cmd.ExecuteReader();
                     table.Load(myReader);
