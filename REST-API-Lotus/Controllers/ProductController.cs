@@ -28,7 +28,7 @@ namespace REST_API_Lotus.Controllers
             _productBusiness = productBusiness;
         }
         [HttpGet]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Product))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
@@ -38,7 +38,7 @@ namespace REST_API_Lotus.Controllers
         }
 
         [HttpGet("category/{category}")]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Product))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
@@ -48,7 +48,7 @@ namespace REST_API_Lotus.Controllers
         }
 
         [HttpGet("{prodcode}")]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Product))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]

@@ -16,7 +16,7 @@ namespace REST_API_Lotus.Business.Implementation
     public class OrderBusinessImplementation : IOrderBusiness
     {
         private readonly IOrderRepository _repository;
-        public OrderBusinessImplementation(IOrderBusiness repository)
+        public OrderBusinessImplementation(IOrderRepository repository)
         {
             _repository = repository;
         }

@@ -76,8 +76,7 @@ namespace REST_API_Lotus.Repository
 
             return DataTableToJsonObj(table);
         }
-        public JsonResult Update(Reserve reser
-            )
+        public JsonResult Update(Reserve reserve)
         {
             string query = "spUpdateReserve";
 

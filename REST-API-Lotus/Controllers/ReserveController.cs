@@ -16,47 +16,47 @@ namespace REST_API_Lotus.Controllers
     [ApiVersion("1")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class OrderController : ControllerBase
+    public class ReserveController : ControllerBase
     {
 
-        private readonly ILogger<OrderController> _logger;
-        private IOrderBusiness _orderBusiness;
+        private readonly ILogger<ReserveController> _logger;
+        private IReserveBusiness _reserveBusiness;
 
         
 
-        public OrderController(ILogger<OrderController> logger, IOrderBusiness orderBusiness)
+        public ReserveController(ILogger<ReserveController> logger, IReserveBusiness reserveBusiness)
         {
             _logger = logger;
-            _orderBusiness = orderBusiness;
+            _reserveBusiness = reserveBusiness;
         }
 
         [HttpGet]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Reserve))]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         public IActionResult Get()
         {
-            return Ok(_orderBusiness.FindAll());
+            return Ok(_reserveBusiness.FindAll());
         }
 
         [HttpPost]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Reserve))]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
-        public IActionResult Post([FromBody] Order order)
+        public IActionResult Post([FromBody] Reserve order)
         {
             if (order == null) return BadRequest();
-            return Ok(_orderBusiness.Create(order));
+            return Ok(_reserveBusiness.Create(order));
         }
         [HttpPut]
-        [ProducesResponseType((200), Type = typeof(Customer))]
+        [ProducesResponseType((200), Type = typeof(Reserve))]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
-        public IActionResult Put([FromBody] Order order)
+        public IActionResult Put([FromBody] Reserve order)
         {
             if (order == null) return BadRequest();
-            return Ok(_orderBusiness.Update(order));
+            return Ok(_reserveBusiness.Update(order));
         }
 
         //[HttpDelete("{id}")]

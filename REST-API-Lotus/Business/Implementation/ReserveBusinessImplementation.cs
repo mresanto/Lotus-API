@@ -16,7 +16,7 @@ namespace REST_API_Lotus.Business.Implementation
     public class ReserveBusinessImplementation : IReserveBusiness
     {
         private readonly IReserveRepository _repository;
-        public ReserveBusinessImplementation(IReserveBusiness repository)
+        public ReserveBusinessImplementation(IReserveRepository repository)
         {
             _repository = repository;
         }
