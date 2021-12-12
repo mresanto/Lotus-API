@@ -11,7 +11,6 @@ namespace REST_API_Lotus.Business
     {
         JsonResult Create(Order order);
         string FindAll();
-        JsonResult Update(Order order);
 
     }
 }

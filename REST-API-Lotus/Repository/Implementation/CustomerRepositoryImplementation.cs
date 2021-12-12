@@ -154,7 +154,7 @@ namespace REST_API_Lotus.Repository
                     Cmd.Parameters.AddWithValue("varCustGender", customer.custgender);
                     Cmd.Parameters.AddWithValue("varCustPassword", customer.custpassword);
                     Cmd.Parameters.AddWithValue("varCustNumberAddress", customer.custnumberaddress);
-                    Cmd.Parameters.AddWithValue("varCEP", customer.cepaddress);
+                    Cmd.Parameters.AddWithValue("varCEPAddress", customer.cepaddress);
 
                     myReader = Cmd.ExecuteReader();
                     table.Load(myReader);

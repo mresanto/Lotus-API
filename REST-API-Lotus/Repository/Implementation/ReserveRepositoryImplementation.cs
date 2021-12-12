@@ -29,14 +29,16 @@ namespace REST_API_Lotus.Repository
                 using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
                 {
                     Cmd.CommandType = CommandType.StoredProcedure;
-                    Cmd.Parameters.AddWithValue("varResCode", reserve.rescode);
+                    Cmd.Parameters.AddWithValue("varPayDate", reserve.paydate);
+                    Cmd.Parameters.AddWithValue("varPayValue", reserve.payvalue);
+                    Cmd.Parameters.AddWithValue("varIsDeleted", reserve.isdeleted);
+                    Cmd.Parameters.AddWithValue("varStatusPayment", reserve.statuspayment);
+                    Cmd.Parameters.AddWithValue("varPayOption", reserve.payoption);
+                    Cmd.Parameters.AddWithValue("varCustCPF", reserve.custcpf);
                     Cmd.Parameters.AddWithValue("varResValidity", reserve.resvalidity);
                     Cmd.Parameters.AddWithValue("varResAmount", reserve.resamount);
-                    Cmd.Parameters.AddWithValue("varStatusReserve", reserve.statusreserve);
-                    Cmd.Parameters.AddWithValue("varIsDeleted", reserve.isdeleted);
-                    Cmd.Parameters.AddWithValue("vartCustCPF", reserve.custcpf);
                     Cmd.Parameters.AddWithValue("varPackCode", reserve.packcode);
-                    Cmd.Parameters.AddWithValue("varPayCode", reserve.paycode);
+
 
 
                     myReader = Cmd.ExecuteReader();
@@ -54,7 +56,7 @@ namespace REST_API_Lotus.Repository
 
         public string FindAll()
         {
-            string query = @"SELECT * FROM tbOrder";
+            string query = @"SELECT * FROM tbReserve";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
@@ -96,7 +98,6 @@ namespace REST_API_Lotus.Repository
                     Cmd.Parameters.AddWithValue("varIsDeleted", reserve.isdeleted);
                     Cmd.Parameters.AddWithValue("vartCustCPF", reserve.custcpf);
                     Cmd.Parameters.AddWithValue("varPackCode", reserve.packcode);
-                    Cmd.Parameters.AddWithValue("varPayCode", reserve.paycode);
 
                     myReader = Cmd.ExecuteReader();
                     table.Load(myReader);

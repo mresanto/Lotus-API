@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace REST_API_Lotus.Repository
 {
-    public interface IOrderRepository
+    public interface IOrderItemRepository
     {
-        JsonResult Create(Order order);
-        string FindAll();
+        JsonResult Create(OrderItem order);
     }
 }

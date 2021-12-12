@@ -22,31 +22,38 @@ namespace REST_API_Lotus.Repository
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
-            MySqlDataReader myReader;
-            using(MySqlConnection mycon = new MySqlConnection(sqlDataSource))
+            if (order.payOption != null)
             {
-                mycon.Open();
-                using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
+                MySqlDataReader myReader;
+                using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
                 {
-                    Cmd.CommandType = CommandType.StoredProcedure;
-                    Cmd.Parameters.AddWithValue("varOrdCode ", order.ordcode);
-                    Cmd.Parameters.AddWithValue("varProdBarCode ", order.prodbarcode);
-                    Cmd.Parameters.AddWithValue("varItemUnitaryPrice ", order.itemunitaryprice);
-                    Cmd.Parameters.AddWithValue("varItemAmount ", order.ItemAmount);
-                    Cmd.Parameters.AddWithValue("varItemTotalPrice  ", order.ItemTotalPrice);
 
-                    myReader = Cmd.ExecuteReader();
-                    table.Load(myReader);
+                    mycon.Open();
+                    using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
+                    {
+                        Cmd.CommandType = CommandType.StoredProcedure;
+                        Cmd.Parameters.AddWithValue("varOrdDate", order.ordDate);
+                        Cmd.Parameters.AddWithValue("varTotalPrice", order.totalPrice);
+                        Cmd.Parameters.AddWithValue("varStatusOrder", order.statusOrder);
+                        Cmd.Parameters.AddWithValue("varCustCPF", order.custCPF);
+                        Cmd.Parameters.AddWithValue("varPayDate", order.payDate);
+                        Cmd.Parameters.AddWithValue("varIsDeleted", order.isDeleted);
+                        Cmd.Parameters.AddWithValue("varStatusPayment", order.statusPayment);
+                        Cmd.Parameters.AddWithValue("varPayOption", order.payOption);
 
-                    myReader.Close();
-                    mycon.Close();
+                        myReader = Cmd.ExecuteReader();
+                        table.Load(myReader);
+
+                        myReader.Close();
+                        mycon.Close();
+                    }
                 }
-
-
             }
 
             return new JsonResult("Added Successfully");
         }
+
+
 
         public void Delete(long id)
         {
@@ -80,7 +87,7 @@ namespace REST_API_Lotus.Repository
         public JsonResult Update(Order order)
         {
             string query = "spUpdateOrder";
-
+        
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
             MySqlDataReader myReader;
@@ -89,23 +96,23 @@ namespace REST_API_Lotus.Repository
                 mycon.Open();
                 using (MySqlCommand Cmd = new MySqlCommand(query, mycon))
                 {
-                    Cmd.CommandType = CommandType.StoredProcedure;
-                    Cmd.Parameters.AddWithValue("varOrdCode ", order.ordcode);
-                    Cmd.Parameters.AddWithValue("varProdBarCode ", order.prodbarcode);
-                    Cmd.Parameters.AddWithValue("varItemUnitaryPrice ", order.itemunitaryprice);
-                    Cmd.Parameters.AddWithValue("varItemAmount ", order.ItemAmount);
-                    Cmd.Parameters.AddWithValue("varItemTotalPrice  ", order.ItemTotalPrice);
-
+                    //Cmd.CommandType = CommandType.StoredProcedure;
+                    //Cmd.Parameters.AddWithValue("varOrdCode ", order.ordcode);
+                    //Cmd.Parameters.AddWithValue("varProdBarCode ", order.prodbarcode);
+                    //Cmd.Parameters.AddWithValue("varItemUnitaryPrice ", order.itemunitaryprice);
+                    //Cmd.Parameters.AddWithValue("varItemAmount ", order.ItemAmount);
+                    //Cmd.Parameters.AddWithValue("varItemTotalPrice  ", order.ItemTotalPrice);
+        
                     myReader = Cmd.ExecuteReader();
                     table.Load(myReader);
-
+        
                     myReader.Close();
                     mycon.Close();
                 }
-
-
+        
+        
             }
-
+        
             return new JsonResult("Added Successfully");
         }
         public string DataTableToJsonObj(DataTable dt)

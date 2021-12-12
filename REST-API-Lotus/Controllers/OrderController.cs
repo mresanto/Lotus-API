@@ -37,7 +37,6 @@ namespace REST_API_Lotus.Controllers
         {
             return Ok(_orderBusiness.FindAll());
         }
-
         [HttpPost]
         [ProducesResponseType((200), Type = typeof(Order))]
         [ProducesResponseType(400)]
@@ -46,16 +45,6 @@ namespace REST_API_Lotus.Controllers
         {
             if (order == null) return BadRequest();
             return Ok(_orderBusiness.Create(order));
-        }
-
-        [HttpPut]
-        [ProducesResponseType((200), Type = typeof(Order))]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(401)]
-        public IActionResult Put([FromBody] Order order)
-        {
-            if (order == null) return BadRequest();
-            return Ok(_orderBusiness.Update(order));
         }
     }
 }

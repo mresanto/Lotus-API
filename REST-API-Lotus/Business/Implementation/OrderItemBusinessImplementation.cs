@@ -13,20 +13,17 @@ using System.Text;
 
 namespace REST_API_Lotus.Business.Implementation
 {
-    public class OrderBusinessImplementation : IOrderBusiness
+    public class OrderItemBusinessImplementation : IOrderItemBusiness
     {
-        private readonly IOrderRepository _repository;
-        public OrderBusinessImplementation(IOrderRepository repository)
+        private readonly IOrderItemRepository _repository;
+        public OrderItemBusinessImplementation(IOrderItemRepository repository)
         {
             _repository = repository;
         }
-        public JsonResult Create(Order order)
+        public JsonResult Create(OrderItem orderitem)
         {
-            return _repository.Create(order);
+            return _repository.Create(orderitem);
         }
-        public string FindAll()
-        {
-            return _repository.FindAll();
-        }
+      
     }
 }

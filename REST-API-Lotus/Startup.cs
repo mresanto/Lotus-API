@@ -78,6 +78,9 @@ namespace REST_API_Lotus
             services.AddScoped<IOrderBusiness, OrderBusinessImplementation>();
             services.AddScoped<IOrderRepository, OrderRepositoryImplementation>();
 
+            services.AddScoped<IOrderItemBusiness, OrderItemBusinessImplementation>();
+            services.AddScoped<IOrderItemRepository, OrderItemRepositoryImplementation>();
+
             services.AddScoped<IReserveBusiness, ReserveBusinessImplementation>();
             services.AddScoped<IReserveRepository, ReserveRepositoryImplementation>();
 

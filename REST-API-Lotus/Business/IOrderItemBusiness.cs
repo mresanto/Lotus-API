@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace REST_API_Lotus.Repository
+namespace REST_API_Lotus.Business
 {
-    public interface IOrderRepository
+    public interface IOrderItemBusiness
     {
-        JsonResult Create(Order order);
-        string FindAll();
+        JsonResult Create(OrderItem order);
     }
 }
