@@ -36,9 +36,7 @@ Para usar <Lotus-Api>, siga estas etapas:
 2- Execute como ISSExpress apenas se irá testar a aplicação para json na própria máquina
 3- (Opcional) Caso irá executar em uma máquina virtual Mobile, mude para hospedar diretamente na porta da máqunia  
 ```
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+## 💖 Desevolvedor
 
 <table>
   <tr>
