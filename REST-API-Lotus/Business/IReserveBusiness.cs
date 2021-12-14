@@ -11,6 +11,7 @@ namespace REST_API_Lotus.Business
     {
         JsonResult Create(Reserve reserve);
         string FindAll();
+        string FindByCode(string email);
         JsonResult Update(Reserve reserve);
 
     }

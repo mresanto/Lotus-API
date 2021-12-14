@@ -16,6 +16,7 @@ namespace REST_API_Lotus.Repository
         {
             _configuration = configuration;
         }
+
         public JsonResult Create(Order order)
         {
             string query = "spInsertOrder";
@@ -53,16 +54,9 @@ namespace REST_API_Lotus.Repository
             return new JsonResult("Added Successfully");
         }
 
-
-
-        public void Delete(long id)
-        {
-
-        }
-
         public string FindAll()
         {
-            string query = @"SELECT * FROM tbOrder";
+            string query = @"SELECT * FROM SelectOrder Where StatusOrder = 'U'";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
@@ -84,6 +78,32 @@ namespace REST_API_Lotus.Repository
 
             return DataTableToJsonObj(table);
         }
+
+        public string FindByCode(string email)
+        {
+            string query = @"select * from SelectOrder where  StatusOrder = 'U' AND custEmail ='" + email + "';";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
+            MySqlDataReader myReader;
+
+            using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
+            {
+                mycon.Open();
+                using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    mycon.Close();
+                }
+            };
+            return DataTableToJsonObj(table);
+        }
+
+
+
         public JsonResult Update(Order order)
         {
             string query = "spUpdateOrder";

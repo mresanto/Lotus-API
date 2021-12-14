@@ -28,5 +28,10 @@ namespace REST_API_Lotus.Business.Implementation
         {
             return _repository.FindAll();
         }
+
+        public string FindByCode(string email)
+        {
+            return _repository.FindByCode(email);
+        }
     }
 }

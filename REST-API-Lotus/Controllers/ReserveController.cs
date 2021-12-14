@@ -40,6 +40,16 @@ namespace REST_API_Lotus.Controllers
             return Ok(_reserveBusiness.FindAll());
         }
 
+        [HttpGet("{email}")]
+        [ProducesResponseType((200), Type = typeof(Reserve))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        public IActionResult Get(string email)
+        {
+            return Ok(_reserveBusiness.FindByCode(email));
+        }
+
         [HttpPost]
         [ProducesResponseType((200), Type = typeof(Reserve))]
         [ProducesResponseType(400)]

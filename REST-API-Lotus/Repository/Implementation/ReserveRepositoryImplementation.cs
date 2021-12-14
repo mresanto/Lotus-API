@@ -56,7 +56,7 @@ namespace REST_API_Lotus.Repository
 
         public string FindAll()
         {
-            string query = @"SELECT * FROM tbReserve";
+            string query = @"SELECT * FROM selectReserve";
 
             DataTable table = new DataTable();
             string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
@@ -78,6 +78,30 @@ namespace REST_API_Lotus.Repository
 
             return DataTableToJsonObj(table);
         }
+
+        public string FindByCode(string email)
+        {
+            string query = @"select * from SelectReserve where StatusPayment = 'U' AND custEmail ='" + email + "';";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration["MySQLConnection:MySQLConnectionString"];
+            MySqlDataReader myReader;
+
+            using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
+            {
+                mycon.Open();
+                using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    mycon.Close();
+                }
+            };
+            return DataTableToJsonObj(table);
+        }
+
         public JsonResult Update(Reserve reserve)
         {
             string query = "spUpdateReserve";

@@ -37,6 +37,17 @@ namespace REST_API_Lotus.Controllers
         {
             return Ok(_orderBusiness.FindAll());
         }
+
+        [HttpGet("{email}")]
+        [ProducesResponseType((200), Type = typeof(Order))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        public IActionResult Get(string email)
+        {
+            return Ok(_orderBusiness.FindByCode(email));
+        }
+
         [HttpPost]
         [ProducesResponseType((200), Type = typeof(Order))]
         [ProducesResponseType(400)]

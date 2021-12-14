@@ -28,6 +28,11 @@ namespace REST_API_Lotus.Business.Implementation
         {
             return _repository.FindAll();
         }
+
+        public string FindByCode(string email)
+        {
+            return _repository.FindByCode(email);
+        }
         public JsonResult Update(Reserve reserve)
         {
             return _repository.Update(reserve);

@@ -11,5 +11,6 @@ namespace REST_API_Lotus.Repository
     {
         JsonResult Create(Order order);
         string FindAll();
+        string FindByCode(string email);
     }
 }
