@@ -5,7 +5,7 @@ API RestFull para conectar a aplicação mobile Lotus_SPA com a conexão do banc
 ## ☕ Sobre esse Projeto
 
 Esse projeto foi desenvolvido para o TCC do curso Desenvolvimento de Sistema na escola **[ETEC Professor Basilides de Godoy](https://basilides.com.br)**.
-Além desse projeto ser ASP.NET Core, também é utlizado na aplicação mobile **[Lotus_SPA](https://github.com/mresanto/LotusSPA_AndroidStudio_Java)** desenvolvida para esse projeto.
+Além desse projeto ser ASP.NET Core, Swagger, Banco de Dados MySQL também é utlizado na aplicação mobile **[Lotus_SPA](https://github.com/mresanto/LotusSPA_AndroidStudio_Java)** desenvolvida para esse projeto.
 
 ## 📸 Galeria
 
