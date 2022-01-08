@@ -30,8 +30,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o <LotusAPI_ASP.NET_Core>, siga estas etapas:
 
 1) Clone o repositório e instale Visual Studio (Ou qualquer outra IDE, ou site que consiga hostear uma API)
-2) Abra a pasta do projeto e modifique as strings de conexão com o banco em appsettings.json
-3) Caso esteja hospedando localmente com o Visual Studio abra o arquivo launchSettings.json para configurar a url e porta de hospedagem
+2) Abra o MySQL e execute os 3 arquivos sql na Pasta Scripts
+3) Abra a pasta do projeto e modifique as strings de conexão com o banco em appsettings.json
+4) Caso esteja hospedando localmente com o Visual Studio abra o arquivo launchSettings.json para configurar a url e porta de hospedagem
 
 ## ☕ Usando <Lotus-Api>
   
