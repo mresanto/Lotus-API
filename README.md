@@ -1,6 +1,15 @@
-# Lotus API
+# LotusAPI_ASP.NET_Core
 
-> API RestFull para conectar a aplicação mobile Lotus_SPA com a conexão do banco MySQL.
+API RestFull para conectar a aplicação mobile Lotus_SPA com a conexão do banco MySQL, utilizando a linguagem de programação ASP.Net Core, para os funcionamentos da compras de produtos e efetuação das reservas
+
+## ☕ Sobre esse Projeto
+
+Esse projeto foi desenvolvido para o TCC do curso Desenvolvimento de Sistema na escola **[ETEC Professor Basilides de Godoy](https://basilides.com.br)**.
+Além desse projeto ser ASP.NET Core, também é utlizado na aplicação mobile **[Lotus_SPA](https://github.com/mresanto/LotusSPA_AndroidStudio_Java)** desenvolvida para esse projeto.
+
+## 📸 Galeria
+
+https://user-images.githubusercontent.com/66914500/148649833-cd53b9ed-423f-42fc-833e-5b6596585cc6.mp4
 
 ### Ajustes e melhorias
 
@@ -16,26 +25,18 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou a versão mais recente de `<ASP.Core>`
 * Você tem uma máquina `<Windows>`.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando <LotusAPI_ASP.NET_Core>
 
-Para instalar o <Lotus-API>, siga estas etapas:
+Para instalar o <LotusAPI_ASP.NET_Core>, siga estas etapas:
 
-Windows:
-```
-1- Instale os arquivos do repositório
-2- Instale o Visual Studio
-
-```
+1) Clone o repositório e instale Visual Studio (Ou qualquer outra IDE, ou site que consiga hostear uma API)
+2) Abra a pasta do projeto e modifique as strings de conexão com o banco em appsettings.json
+3) Caso esteja hospedando localmente com o Visual Studio abra o arquivo launchSettings.json para configurar a url e porta de hospedagem
 
 ## ☕ Usando <Lotus-Api>
-
-Para usar <Lotus-Api>, siga estas etapas:
-
-```
-1- Abre os arquivos do repositório e Click no Executável REST-API-Lotus.sln
-2- Execute como ISSExpress apenas se irá testar a aplicação para json na própria máquina
-3- (Opcional) Caso irá executar em uma máquina virtual Mobile, mude para hospedar diretamente na porta da máqunia  
-```
+  
+Execute o aplicativo e teste sua conexão com um navegador web ou uma API Platform. Também é possível utilizá lo com a aplicação **[Lotus_SPA](https://github.com/mresanto/LotusSPA_AndroidStudio_Java)**
+  
 ## 💖 Desevolvedor
 
 <table>
